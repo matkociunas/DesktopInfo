@@ -135,16 +135,6 @@ begin
       lItem.ImageIndex:= -1;
       lItem.Caption:= 'City: ';
       lItem.SubItems.Add(info.city);
-      // latitude
-      lItem:= lstvwInfo.Items.Add;
-      lItem.ImageIndex:= -1;
-      lItem.Caption:= 'Latitude: ';
-      lItem.SubItems.Add(info.lat.ToString);
-      // city
-      lItem:= lstvwInfo.Items.Add;
-      lItem.ImageIndex:= -1;
-      lItem.Caption:= 'Longtitude: ';
-      lItem.SubItems.Add(info.lon.ToString);
     finally
     end;
   end;

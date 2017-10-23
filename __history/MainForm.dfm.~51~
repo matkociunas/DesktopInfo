@@ -3,7 +3,7 @@ object frmMain: TfrmMain
   Top = 0
   BorderStyle = bsNone
   Caption = 'frmMain'
-  ClientHeight = 195
+  ClientHeight = 181
   ClientWidth = 336
   Color = clBtnFace
   Font.Charset = BALTIC_CHARSET
@@ -23,7 +23,7 @@ object frmMain: TfrmMain
     Left = 5
     Top = 5
     Width = 326
-    Height = 185
+    Height = 171
     Margins.Left = 5
     Margins.Top = 5
     Margins.Right = 5

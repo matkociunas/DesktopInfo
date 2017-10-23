@@ -25,16 +25,16 @@ var
   varTInAddr : TInAddr;
   namebuf : array [0..255] of AnsiChar;
 begin
-  if WSAStartup($101, varTWSAData) <> 0 then
+  if WSAStartup($101,varTWSAData) <> 0 then
   begin
     lanIP.ipAddress:= '<no data>';
     Result:= False;
   end
   else begin
     gethostname(namebuf, sizeof(namebuf));
-    varPHostEnt       := gethostbyname(namebuf);
+    varPHostEnt := gethostbyname(namebuf);
     varTInAddr.S_addr := u_long(pu_long(varPHostEnt^.h_addr_list^)^);
-    lanIp.ipAddress   := inet_ntoa(varTInAddr);
+    lanIp.ipAddress:= inet_ntoa(varTInAddr);
   end;
   WSACleanup;
   Result:= True;
