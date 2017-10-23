@@ -1,0 +1,202 @@
+unit MainForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Winsock, ShellApi,
+  JvComponentBase, JvTrayIcon, Vcl.Menus, Vcl.ComCtrls, JvMenus;
+
+type
+  TfrmMain = class(TForm)
+    JvTrayIcon1: TJvTrayIcon;
+    PopupMenu1: TPopupMenu;
+    Exit1: TMenuItem;
+    lstvwInfo: TListView;
+    Timer1: TTimer;
+    DesktopInfo1: TMenuItem;
+    procedure FormCreate(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure UpdateNetworkInfo;
+    procedure Timer1Timer(Sender: TObject);
+    procedure Exit2Click(Sender: TObject);
+    procedure DesktopInfo1Click(Sender: TObject);
+    procedure Exit1Click(Sender: TObject);
+    procedure lstvwInfoCustomDrawSubItem(Sender: TCustomListView;
+      Item: TListItem; SubItem: Integer; State: TCustomDrawState;
+      var DefaultDraw: Boolean);
+  private
+    TrayIconData: TNotifyIconData;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMain: TfrmMain;
+
+implementation
+
+{$R *.dfm}
+
+uses MyIP, MyLanIp;
+
+function GetComputerName: string;
+begin
+  Result := GetEnvironmentVariable('COMPUTERNAME');
+end;
+{
+function GetIPAddress():String;
+type
+  pu_long = ^u_long;
+var
+  varTWSAData : TWSAData;
+  varPHostEnt : PHostEnt;
+  varTInAddr : TInAddr;
+  namebuf : array [0..255] of AnsiChar;
+begin
+  If WSAStartup($101,varTWSAData) <> 0 Then
+  Result := 'No. IP Address'
+  Else Begin
+    gethostname(namebuf, sizeof(namebuf));
+    varPHostEnt := gethostbyname(namebuf);
+    varTInAddr.S_addr := u_long(pu_long(varPHostEnt^.h_addr_list^)^);
+    Result := inet_ntoa(varTInAddr);
+  End;
+  WSACleanup;
+end;
+ }
+procedure TfrmMain.DesktopInfo1Click(Sender: TObject);
+begin
+  UpdateNetworkInfo;
+end;
+
+procedure TfrmMain.Exit1Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TfrmMain.Exit2Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TfrmMain.FormActivate(Sender: TObject);
+begin
+  ShowWindow(Application.Handle, SW_HIDE);
+end;
+
+function GetFreeDiskSpace(i: integer): string;
+var
+  freeSpace: Int64;
+begin
+  Result:= '-';
+  freeSpace:= DiskFree(i);
+  if freeSpace > 0 then
+    Result:= FloatToStrF(freeSpace / 1073741824, ffFixed, 10, 2);
+end;
+
+procedure TfrmMain.UpdateNetworkInfo;
+var
+  info: TIPInfo;
+  lanIp: TLanIpInfo;
+  lItem: TListItem;
+  lan: string;
+begin
+  Top            := 0;
+  Left           := Screen.Width - Width;
+  AlphaBlend     := True;
+  AlphaBlendValue:= 150;
+
+  lstvwInfo.Items.Clear;
+  // hostname
+  lItem:= lstvwInfo.Items.Add;
+  lItem.ImageIndex:= 2;
+  lItem.Caption:= '';
+  lItem.SubItems.Add(GetComputerName);
+
+  if TMyLanIp.GetIpAddress(lanIp) then
+    lan:= lanIp.ipAddress
+  else
+    lan:= '<no data>';
+
+  // blank
+  lItem:= lstvwInfo.Items.Add;
+  lItem.ImageIndex:= -1;
+  lItem.Caption:= '';
+  lItem.SubItems.Add('---');
+
+  // local IP address
+  lItem:= lstvwInfo.Items.Add;
+  lItem.ImageIndex:= 1;
+  lItem.Caption:= '';
+  lItem.SubItems.Add(lan);
+
+  if TMyIP.GetInfo(info) then
+  begin
+    try
+      // public IP address
+      lItem:= lstvwInfo.Items.Add;
+      lItem.ImageIndex:= 0;
+      lItem.Caption:= '';
+      lItem.SubItems.Add(info.IPAddress);
+      // isp name
+      lItem:= lstvwInfo.Items.Add;
+      lItem.ImageIndex:= 3;
+      lItem.Caption:= '';
+      lItem.SubItems.Add(info.Isp);
+      // blank
+      lItem:= lstvwInfo.Items.Add;
+      lItem.ImageIndex:= -1;
+      lItem.Caption:= '';
+      lItem.SubItems.Add('---');
+      // free disk space
+      lItem:= lstvwInfo.Items.Add;
+      lItem.ImageIndex:= 3;
+      lItem.Caption:= '';
+      lItem.SubItems.Add(GetFreeDiskSpace(3));
+      {
+      // city
+      lItem:= lstvwInfo.Items.Add;
+      lItem.ImageIndex:= -1;
+      lItem.Caption:= 'City: ';
+      lItem.SubItems.Add(info.city);
+      // latitude
+      lItem:= lstvwInfo.Items.Add;
+      lItem.ImageIndex:= -1;
+      lItem.Caption:= 'Latitude: ';
+      lItem.SubItems.Add(info.lat.ToString);
+      // city
+      lItem:= lstvwInfo.Items.Add;
+      lItem.ImageIndex:= -1;
+      lItem.Caption:= 'Longtitude: ';
+      lItem.SubItems.Add(info.lon.ToString);
+      }
+    finally
+    end;
+  end;
+end;
+
+procedure TfrmMain.FormCreate(Sender: TObject);
+begin
+  UpdateNetworkInfo;
+end;
+
+procedure TfrmMain.FormShow(Sender: TObject);
+begin
+  ShowWindow(Application.Handle, SW_HIDE);
+end;
+
+procedure TfrmMain.lstvwInfoCustomDrawSubItem(Sender: TCustomListView;
+  Item: TListItem; SubItem: Integer; State: TCustomDrawState;
+  var DefaultDraw: Boolean);
+begin
+  Sender.Canvas.Font.Style:= [fsBold];
+end;
+
+procedure TfrmMain.Timer1Timer(Sender: TObject);
+begin
+  UpdateNetworkInfo;
+end;
+
+end.

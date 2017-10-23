@@ -39,7 +39,7 @@ implementation
 
 {$R *.dfm}
 
-uses MyIP, MyLanIp;
+uses MyIP, MyLanIp, DiskDriveInfo;
 
 function GetComputerName: string;
 begin
@@ -86,12 +86,23 @@ begin
   ShowWindow(Application.Handle, SW_HIDE);
 end;
 
+function GetFreeDiskSpace(i: integer): string;
+var
+  freeSpace: Int64;
+begin
+  Result:= '-';
+  freeSpace:= DiskFree(i);
+  if freeSpace > 0 then
+    Result:= FloatToStrF(freeSpace / 1073741824, ffFixed, 10, 2);
+end;
+
 procedure TfrmMain.UpdateNetworkInfo;
 var
   info: TIPInfo;
   lanIp: TLanIpInfo;
   lItem: TListItem;
   lan: string;
+  i: integer;
 begin
   Top            := 0;
   Left           := Screen.Width - Width;
@@ -101,8 +112,8 @@ begin
   lstvwInfo.Items.Clear;
   // hostname
   lItem:= lstvwInfo.Items.Add;
-  lItem.ImageIndex:= -1;
-  lItem.Caption:= 'Host: ';
+  lItem.ImageIndex:= 2;
+  lItem.Caption:= '';
   lItem.SubItems.Add(GetComputerName);
 
   if TMyLanIp.GetIpAddress(lanIp) then
@@ -110,10 +121,16 @@ begin
   else
     lan:= '<no data>';
 
-  // local IP address
+  // blank
   lItem:= lstvwInfo.Items.Add;
   lItem.ImageIndex:= -1;
-  lItem.Caption:= 'Private IP: ';
+  lItem.Caption:= '';
+  lItem.SubItems.Add('---');
+
+  // local IP address
+  lItem:= lstvwInfo.Items.Add;
+  lItem.ImageIndex:= 1;
+  lItem.Caption:= '';
   lItem.SubItems.Add(lan);
 
   if TMyIP.GetInfo(info) then
@@ -121,15 +138,26 @@ begin
     try
       // public IP address
       lItem:= lstvwInfo.Items.Add;
-      lItem.ImageIndex:= -1;
-      lItem.Caption:= 'Public IP: ';
+      lItem.ImageIndex:= 0;
+      lItem.Caption:= '';
       lItem.SubItems.Add(info.IPAddress);
       // isp name
-
+      lItem:= lstvwInfo.Items.Add;
+      lItem.ImageIndex:= 4;
+      lItem.Caption:= '';
+      lItem.SubItems.Add(info.Isp);
+      // blank
       lItem:= lstvwInfo.Items.Add;
       lItem.ImageIndex:= -1;
-      lItem.Caption:= 'ISP name: ';
-      lItem.SubItems.Add(info.Isp);
+      lItem.Caption:= '';
+      lItem.SubItems.Add('---');
+      // free disk space
+      CreateDiskSizeList(lstvwInfo);
+     {
+      lItem:= lstvwInfo.Items.Add;
+      lItem.ImageIndex:= 3;
+      lItem.Caption:= '';
+      lItem.SubItems.Add('C: ' + GetFreeDiskSpace(3));
       // city
       lItem:= lstvwInfo.Items.Add;
       lItem.ImageIndex:= -1;
@@ -145,6 +173,7 @@ begin
       lItem.ImageIndex:= -1;
       lItem.Caption:= 'Longtitude: ';
       lItem.SubItems.Add(info.lon.ToString);
+      }
     finally
     end;
   end;

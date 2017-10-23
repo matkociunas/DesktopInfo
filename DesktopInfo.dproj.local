@@ -1,23 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899-12-30 00:00:00.000.773,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.009,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.658,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\MainForm.pas=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.268,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.124,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.213,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>1899-12-30 00:00:00.000.865,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.268,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.773,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.658,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\MainForm.pas=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>1899-12-30 00:00:00.000.411,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.981,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\DataModule.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.213,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.124,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.009,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.137,=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas</Transaction>
     <Transaction>1899-12-30 00:00:00.000.658,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\MainForm.dfm=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>1899-12-30 00:00:00.000.160,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\DesktopInfo.dproj=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
     <Transaction>1899-12-30 00:00:00.000.981,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.dfm=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\DataModule.dfm</Transaction>
     <Transaction>1899-12-30 00:00:00.000.919,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\MyIP.pas=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.220,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\MyLanIp.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.580,=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.981,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\DataModule.pas</Transaction>
     <Transaction>1899-12-30 00:00:00.000.973,=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.137,=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.580,=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.220,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\MyLanIp.pas</Transaction>
+    <Transaction>2017-10-23 14:43:02.183,=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas</Transaction>
+    <Transaction>2017-10-23 14:44:40.953,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\DiskDriveInfo.pas=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
 		<NoProfile iOSSimulator="iPhone5"/>

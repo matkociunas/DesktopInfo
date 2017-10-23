@@ -7,7 +7,8 @@ uses
   Vcl.Styles,
   MyIP in 'MyIP.pas',
   MyLanIp in 'MyLanIp.pas',
-  DataModule in 'DataModule.pas' {DataModule1: TDataModule};
+  DataModule in 'DataModule.pas' {DataModule1: TDataModule},
+  DiskDriveInfo in 'DiskDriveInfo.pas';
 
 {$R *.res}
 

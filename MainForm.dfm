@@ -4,12 +4,12 @@ object frmMain: TfrmMain
   BorderStyle = bsNone
   Caption = 'frmMain'
   ClientHeight = 195
-  ClientWidth = 336
+  ClientWidth = 288
   Color = clBtnFace
-  Font.Charset = BALTIC_CHARSET
+  Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
-  Font.Height = -16
-  Font.Name = 'Segoe UI'
+  Font.Height = -13
+  Font.Name = 'Lucida Console'
   Font.Style = []
   OldCreateOrder = False
   Position = poDefault
@@ -17,23 +17,23 @@ object frmMain: TfrmMain
   OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 21
+  TextHeight = 13
   object lstvwInfo: TListView
     AlignWithMargins = True
-    Left = 5
+    Left = 10
     Top = 5
-    Width = 326
+    Width = 268
     Height = 185
-    Margins.Left = 5
+    Margins.Left = 10
     Margins.Top = 5
-    Margins.Right = 5
+    Margins.Right = 10
     Margins.Bottom = 5
     Align = alClient
     BorderStyle = bsNone
     Columns = <
       item
         Caption = 'Network '
-        Width = 120
+        Width = 24
       end
       item
         AutoSize = True
@@ -44,7 +44,6 @@ object frmMain: TfrmMain
     SmallImages = DataModule1.ImageList1
     TabOrder = 0
     ViewStyle = vsReport
-    ExplicitHeight = 145
   end
   object JvTrayIcon1: TJvTrayIcon
     Active = True
@@ -130,12 +129,12 @@ object frmMain: TfrmMain
     IconIndex = 0
     Hint = 'DesktopInfo'
     PopupMenu = PopupMenu1
-    Left = 256
-    Top = 16
+    Left = 88
+    Top = 24
   end
   object PopupMenu1: TPopupMenu
-    Left = 256
-    Top = 72
+    Left = 152
+    Top = 24
     object DesktopInfo1: TMenuItem
       Caption = 'Update'
       OnClick = DesktopInfo1Click
@@ -148,7 +147,7 @@ object frmMain: TfrmMain
   object Timer1: TTimer
     Interval = 60000
     OnTimer = Timer1Timer
-    Left = 184
-    Top = 24
+    Left = 32
+    Top = 16
   end
 end
