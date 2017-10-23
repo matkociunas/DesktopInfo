@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.268,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.773,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.009,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.865,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.411,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.124,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.213,=C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.658,C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\MainForm.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.919,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\MyIP.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.973,=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.160,C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\DesktopInfo.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.658,C:\Users\Mindaugas\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\MainForm.dfm</Transaction>
+    <Transaction>2017-10-22 15:52:24.137,=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas</Transaction>
+    <Transaction>2017-10-22 16:00:01.220,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\MyLanIp.pas=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas</Transaction>
+    <Transaction>2017-10-22 17:14:30.580,=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas</Transaction>
+    <Transaction>2017-10-22 17:14:59.981,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\DataModule.dfm=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.dfm</Transaction>
+    <Transaction>2017-10-22 17:14:59.981,C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\DataModule.pas=C:\Users\Mindaugas\Documents\DelphiProjects\DesktopInfo\Unit1.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

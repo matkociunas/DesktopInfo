@@ -1,0 +1,18 @@
+program DesktopInfo;
+
+uses
+  Vcl.Forms,
+  MainForm in 'MainForm.pas' {frmMain},
+  Vcl.Themes,
+  Vcl.Styles,
+  MyIP in 'MyIP.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Windows10 Dark');
+  Application.CreateForm(TfrmMain, frmMain);
+  Application.Run;
+end.
