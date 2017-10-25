@@ -15,8 +15,6 @@ type
     lstvwInfo: TListView;
     Timer1: TTimer;
     DesktopInfo1: TMenuItem;
-    About: TMenuItem;
-    Settings: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -28,8 +26,6 @@ type
     procedure lstvwInfoCustomDrawSubItem(Sender: TCustomListView;
       Item: TListItem; SubItem: Integer; State: TCustomDrawState;
       var DefaultDraw: Boolean);
-    procedure AboutClick(Sender: TObject);
-    procedure SettingsClick(Sender: TObject);
   private
     TrayIconData: TNotifyIconData;
   public
@@ -43,7 +39,7 @@ implementation
 
 {$R *.dfm}
 
-uses MyIP, MyLanIp, DiskDriveInfo, About, Settings;
+uses MyIP, MyLanIp, DiskDriveInfo;
 
 function GetComputerName: string;
 begin
@@ -70,13 +66,6 @@ begin
   WSACleanup;
 end;
  }
-procedure TfrmMain.AboutClick(Sender: TObject);
-begin
-  if frmAbout = nil then
-    Application.CreateForm(TfrmAbout, frmAbout);
-  frmAbout.ShowModal;
-end;
-
 procedure TfrmMain.DesktopInfo1Click(Sender: TObject);
 begin
   UpdateNetworkInfo;
@@ -205,13 +194,6 @@ procedure TfrmMain.lstvwInfoCustomDrawSubItem(Sender: TCustomListView;
   var DefaultDraw: Boolean);
 begin
   Sender.Canvas.Font.Style:= [fsBold];
-end;
-
-procedure TfrmMain.SettingsClick(Sender: TObject);
-begin
-  if frmSettings = nil then
-    Application.CreateForm(TfrmSettings, frmSettings);
-  frmSettings.ShowModal;
 end;
 
 procedure TfrmMain.Timer1Timer(Sender: TObject);

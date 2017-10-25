@@ -20,5 +20,6 @@ begin
   TStyleManager.TrySetStyle('Windows10 Dark');
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TfrmSettings, frmSettings);
   Application.Run;
 end.

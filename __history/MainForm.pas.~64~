@@ -16,7 +16,6 @@ type
     Timer1: TTimer;
     DesktopInfo1: TMenuItem;
     About: TMenuItem;
-    Settings: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -29,7 +28,6 @@ type
       Item: TListItem; SubItem: Integer; State: TCustomDrawState;
       var DefaultDraw: Boolean);
     procedure AboutClick(Sender: TObject);
-    procedure SettingsClick(Sender: TObject);
   private
     TrayIconData: TNotifyIconData;
   public
@@ -43,7 +41,7 @@ implementation
 
 {$R *.dfm}
 
-uses MyIP, MyLanIp, DiskDriveInfo, About, Settings;
+uses MyIP, MyLanIp, DiskDriveInfo, About;
 
 function GetComputerName: string;
 begin
@@ -73,7 +71,7 @@ end;
 procedure TfrmMain.AboutClick(Sender: TObject);
 begin
   if frmAbout = nil then
-    Application.CreateForm(TfrmAbout, frmAbout);
+    Application.CreateForm(frmAbout, TfrmAbout);
   frmAbout.ShowModal;
 end;
 
@@ -205,13 +203,6 @@ procedure TfrmMain.lstvwInfoCustomDrawSubItem(Sender: TCustomListView;
   var DefaultDraw: Boolean);
 begin
   Sender.Canvas.Font.Style:= [fsBold];
-end;
-
-procedure TfrmMain.SettingsClick(Sender: TObject);
-begin
-  if frmSettings = nil then
-    Application.CreateForm(TfrmSettings, frmSettings);
-  frmSettings.ShowModal;
 end;
 
 procedure TfrmMain.Timer1Timer(Sender: TObject);

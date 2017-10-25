@@ -534,10 +534,6 @@ object frmMain: TfrmMain
       Caption = 'Update'
       OnClick = DesktopInfo1Click
     end
-    object Settings: TMenuItem
-      Caption = 'Settings'
-      OnClick = SettingsClick
-    end
     object About: TMenuItem
       Caption = 'About'
       OnClick = AboutClick
